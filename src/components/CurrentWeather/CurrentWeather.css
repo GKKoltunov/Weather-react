@@ -1,0 +1,133 @@
+/* Weather Details */
+.CurrentWeather{
+width: 780px;
+height: 330px;
+padding: 21px 31px 21px 31px;
+bottom: 0;
+border-radius: 30px;
+background: rgb(68, 68, 68);
+box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: space-between;
+}
+
+.temp{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.details-p{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.details{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 67px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+line-height: 30px;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.humidity::after{
+  content: 'humidity';
+  display: block;
+  font-size: 14px;
+}
+
+.wind-speed::after{
+  content: 'Wind speed';
+ display: block;
+  font-size: 14px;
+}
+.pressure::after{
+  content: 'Pressure';
+  display: block;
+  font-size: 14px;
+}
+.pop::after{
+  content: 'POP';
+  display: block;
+  font-size: 14px;
+}
+
+.icon-curImg{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.icon-current{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bigTemp{
+  background: linear-gradient(67.78deg, rgb(255, 255, 255),rgba(255, 255, 255, 0));
+-webkit-background-clip:
+text;
+-webkit-text-fill-color:
+transparent;
+background-clip:
+text;
+font-family: Poppins;
+font-size: 80px;
+font-weight: 700;
+line-height: 120px;
+}
+
+.weather{
+  color: rgb(255, 255, 255);
+font-family: Poppins;
+font-size: 28px;
+font-weight: 600;
+line-height: 32px;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.sun{
+  display: flex;
+  gap: 10px;
+}
+
+.fellsLike{
+  display: flex;
+  align-items: center;
+  margin-bottom: 26px;
+  gap: 5px;
+}
+
+.fellsLike-p{
+  color: rgba(255, 255, 255, 0.8);
+font-family: Poppins;
+font-size: 20px;
+font-weight: 600;
+line-height: 30px;
+letter-spacing: 0%;
+text-align: left;
+
+}
+.fellsLike-temp{
+  color: rgba(255, 255, 255, 0.8);
+font-family: Poppins;
+font-size: 32px;
+font-weight: 700;
+line-height: 48px;
+letter-spacing: 0%;
+text-align: left;
+}
+.set{
+  margin-top: 13px;
+}

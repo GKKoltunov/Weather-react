@@ -1,0 +1,33 @@
+.container{
+height: 100%;
+padding:63px 80px; 
+
+background: linear-gradient(130.48deg, rgb(56, 56, 56) 0%,rgba(158, 158, 158, 0) 120.819%);
+}
+
+.city{
+  display: flex;
+  gap: 55px;
+  max-width: min-content;
+  margin: 0 auto;
+}
+
+.days-hours{
+  display: flex;
+  gap: 61px;
+  max-width: min-content;
+  margin:49px auto;
+}
+.hours-weather{
+  margin-top: 19px;
+  display: flex;
+  gap: 15px;
+  
+}
+
+.hours{
+  padding: 13px 80px 16px 80px
+}
+h2{
+  text-align: center;
+}
