@@ -9,25 +9,23 @@ const test: Test<{ id: string; name: number }> = {
   test2: "id",
 };
 
+const DAYS: Array<string> = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const MONTH = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
-  const DAYS: Array<string> = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const MONTH = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];  
-
-
-export const Day = ({ icon, temp, dt, }: Props) => {
+export const Day = ({ icon, temp, dt }: Props) => {
   const src = `https://openweathermap.org/img/wn/${icon}.png`;
 
   let d = new Date(dt * 1000);

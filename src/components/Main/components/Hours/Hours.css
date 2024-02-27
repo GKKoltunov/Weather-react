@@ -1,0 +1,14 @@
+.hours-weather{
+  justify-content: center;
+  margin-top: 19px;
+  display: flex;
+  gap: 15px;
+  
+}
+
+.hours{
+  padding: 13px 80px 16px 80px
+}
+h2{
+  text-align: center;
+}

@@ -1,12 +1,27 @@
-import React from 'react'
-import './Hours.css'
+import React from "react";
+import "./HoursWeather.css";
 
-export const Hours = ({ time, temp, wind, icon, speed, timezone }) => {
+type Props = {
+  time: number;
+  temp: number;
+  wind: number;
+  icon: string;
+  speed: number;
+  timezone: number;
+};
+
+export const HoursWeather = ({
+  time,
+  temp,
+  wind,
+  icon,
+  speed,
+  timezone,
+}: Props) => {
   let src = `https://openweathermap.org/img/wn/${icon}.png`;
-
   let d = new Date(time * 1000);
-  let hours = d.getUTCHours() + timezone / 3600 ||'0';
-  let minutes = d.getMinutes()||'0';
+  let hours = d.getUTCHours() + timezone / 3600 || 0;
+  let minutes = d.getMinutes() || 0;
 
   return (
     <div className="onehour">
@@ -53,9 +68,9 @@ export const Hours = ({ time, temp, wind, icon, speed, timezone }) => {
         />
       </svg>
 
-      <p className="midle">{Math.ceil(temp)||0}°C</p>
+      <p className="midle">{Math.ceil(temp) || 0}°C</p>
 
-      <p className="midle">{speed||0} km/h</p>
+      <p className="midle">{speed || 0} km/h</p>
     </div>
   );
 };

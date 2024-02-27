@@ -1,49 +1,42 @@
 /* Grid */
-.five-days{
-width: 414px;
-height: 366px;
-border-radius: 30px;
-background: rgb(68, 68, 68);
-box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
-padding: 18px 14px;
-display: flex;
 
-flex-direction: column;
-align-items: center;
-}
-
-.day-weth{
+.day-weth {
   display: flex;
   gap: 42px;
   justify-content: space-between;
-  align-items:center;
-  width:80%;
+  align-items: center;
+  width: 80%;
 }
 
-.five-temp{
+.five-temp {
   color: rgb(255, 255, 255);
-font-family: Poppins;
-font-size: 24px;
-font-weight: 600;
-line-height: 36px;
-letter-spacing: 0%;
-text-align: center;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
-.five-Day{
+.five-Day {
   color: rgb(255, 255, 255);
-font-family: Poppins;
-font-size: 20px;
-font-weight: 600;
-line-height: 30px;
-letter-spacing: 0%;
-text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
-.five-img{
+.five-img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+}
 
-width: 40px;
-height: 60px;
-object-fit: cover;
-object-position: center;
+@media (max-width: 1400px) {
+  .day-weth {
+    justify-content: center;
+  }
 }

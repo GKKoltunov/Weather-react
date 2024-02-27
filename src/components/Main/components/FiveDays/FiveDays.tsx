@@ -1,5 +1,6 @@
 import React from "react";
 import { Day } from "../../../Day/Day";
+import "./FiveDays.css";
 
 type Props = { list: Array<any> };
 
@@ -14,7 +15,6 @@ export const FiveDays = ({ list }: Props) => {
           icon={el.weather[0].icon}
           temp={el.main.temp}
           dt={el.dt}
-          
         />
       ))}
     </div>

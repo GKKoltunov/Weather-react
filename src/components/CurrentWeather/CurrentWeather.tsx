@@ -1,6 +1,20 @@
 import React from "react";
 import "./CurrentWeather.css";
 
+type Props = {
+  icon: string;
+  temp: number;
+  feels: number;
+  sunrise: number;
+  sunset: number;
+  humidity: number;
+  speed: number;
+  pressure: number;
+  pop: number;
+  weather: number;
+  timezone: number;
+};
+
 export const CurrentWeather = ({
   icon,
   temp,
@@ -12,33 +26,37 @@ export const CurrentWeather = ({
   pressure,
   pop,
   weather,
-  timezone
-}) => {
+  timezone,
+}: Props) => {
   let src = `https://openweathermap.org/img/wn/${icon}.png`;
 
-    const sundate = new Date(sunrise * 1000);
-    const timezoneOffsetMilliseconds = timezone * 1000;
-    const utcDate = new Date(sundate.getTime() + sundate.getTimezoneOffset() * 60000);
-    const resultDate = new Date(utcDate.getTime() + timezoneOffsetMilliseconds);
-    let risehours = resultDate.getHours() ||'0'; 
-    let riseminutes = resultDate.getMinutes() || "0";
+  const sundate = new Date(sunrise * 1000);
+  const timezoneOffsetMilliseconds = timezone * 1000;
+  const utcDate = new Date(
+    sundate.getTime() + sundate.getTimezoneOffset() * 60000
+  );
+  const resultDate = new Date(utcDate.getTime() + timezoneOffsetMilliseconds);
+  let risehours = resultDate.getHours() || 0;
+  let riseminutes = resultDate.getMinutes() || 0;
 
-    let setdate = new Date(sunset * 1000);
-     const settimezoneOffsetMilliseconds = timezone * 1000;
-    const setutcDate = new Date(
+  let setdate = new Date(sunset * 1000);
+  const settimezoneOffsetMilliseconds = timezone * 1000;
+  const setutcDate = new Date(
     setdate.getTime() + setdate.getTimezoneOffset() * 60000
-);
-    const setresultDate = new Date(setutcDate.getTime() + settimezoneOffsetMilliseconds);
-    let sethours = setresultDate.getHours() || "0"; 
-    let setminutes = setresultDate.getMinutes() || "0";
+  );
+  const setresultDate = new Date(
+    setutcDate.getTime() + settimezoneOffsetMilliseconds
+  );
+  let sethours = setresultDate.getHours() || 0;
+  let setminutes = setresultDate.getMinutes() || 0;
 
   return (
     <div className="CurrentWeather">
       <div className="temp">
-        <p className="bigTemp">{Math.ceil(temp)||0}°C</p>
+        <p className="bigTemp">{Math.ceil(temp) || 0}°C</p>
         <div className="fellsLike">
           <p className="fellsLike-p">Feels like: </p>
-          <p className="fellsLike-temp">{Math.ceil(feels)||0}°C</p>
+          <p className="fellsLike-temp">{Math.ceil(feels) || 0}°C</p>
         </div>
         <div className="sun rise">
           <svg
@@ -78,9 +96,10 @@ export const CurrentWeather = ({
             />
           </svg>
           <p>
-          Sunrise <br />
-        {risehours >= 10 ? risehours : `0${risehours}`}:
-          {riseminutes >= 10 ? riseminutes : `0${riseminutes}`}</p>
+            Sunrise <br />
+            {risehours >= 10 ? risehours : `0${risehours}`}:
+            {riseminutes >= 10 ? riseminutes : `0${riseminutes}`}
+          </p>
         </div>
         <div className="sun set">
           <svg
@@ -119,9 +138,11 @@ export const CurrentWeather = ({
               fillOpacity="1.000000"
             />
           </svg>
-          <p>Sunset <br />
-          {sethours >= 10 ? sethours : `0${sethours}`}:
-          {setminutes >= 10 ? setminutes : `0${setminutes}`}</p>
+          <p>
+            Sunset <br />
+            {sethours >= 10 ? sethours : `0${sethours}`}:
+            {setminutes >= 10 ? setminutes : `0${setminutes}`}
+          </p>
         </div>
       </div>
 

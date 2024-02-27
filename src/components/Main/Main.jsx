@@ -2,7 +2,7 @@ import { Header } from "../Header/Header";
 import { DateCity } from "../Date/DateCity";
 import { CurrentWeather } from "../CurrentWeather/CurrentWeather";
 import { FiveDays } from "./components/FiveDays/FiveDays";
-import { Hours } from "../Hours/Hours";
+import { Hours } from "./components/Hours/Hours";
 import { useContext, useEffect, useState } from "react";
 import { GeoContext } from "../../providers/context/GeoContext";
 
@@ -22,8 +22,9 @@ export const Main = () => {
   const [hourly, setHourly] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [placeholder, setPlaceholder] = useState(PLACEHOLDER);
-
   const { latitude, longitude } = useContext(GeoContext);
+
+console.log(data)
 
   function value(ev) {
     //считать значение инпута
@@ -171,22 +172,7 @@ export const Main = () => {
       </div>
       <div className="days-hours">
         <FiveDays list={list} />
-        <div className="hours">
-          <h2>Hourly Forecast:</h2>
-          <div className="hours-weather">
-            {hourly.map((el) => (
-              <Hours
-                key={el.dt}
-                time={el.dt}
-                icon={el.weather[0].icon}
-                temp={el.main.temp}
-                wind={el.wind.deg}
-                speed={el.wind.speed}
-                timezone={data.timezone}
-              />
-            ))}
-          </div>
-        </div>
+        <Hours hourly={hourly} timezone={data.timezone} />
       </div>
     </div>
   );

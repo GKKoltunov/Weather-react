@@ -1,6 +1,4 @@
-import {useContext} from "react";
 import "./Header.css";
-import { GeoContext } from "../../providers/context/GeoContext";
 
 export const Header = ({ findCity, value, placeholder, inputValue }) => {
   return (
